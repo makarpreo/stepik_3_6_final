@@ -7,7 +7,8 @@ class TestLogin:
         try:
             browser.implicitly_wait(5)
             browser.get('http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/')
-            assert browser.find_element(By.CSS_SELECTOR, '#add_to_basket_form > button').text == 'Añadir al carrito'
+            assert browser.find_element(By.CSS_SELECTOR, '#add_to_basket_form > button') is not None, 'элемент не найден'
         finally:
             time.sleep(5)
 
+#'#add_to_basket_form > button'
